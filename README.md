@@ -1,6 +1,6 @@
 # portfolio
 
-Static business card of Vasili Holub, Senior .NET Developer.
+Portfolio of Vasili Holub, Senior .NET Developer.
 
-- `index.html` is the whole page, no build step and no external resources.
-- `vasili-holub.vcf` is the contact file behind the "Save contact" button.
+- `index.html` is the whole site, built by `tools/build_portfolio.py` of the job search kit from `outbox/portfolio.md`.
+- One file, no build step here and no external resources.

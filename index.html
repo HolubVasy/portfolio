@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Vasili Holub · Senior .NET Developer</title>
+<meta name="description" content="Senior .NET Developer in Poznań, Poland. C#, ASP.NET Core, integrations and data synchronization. Open to Senior .NET roles, hybrid, remote or office.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Vasili Holub · Senior .NET Developer">
+<meta property="og:description" content="C#, ASP.NET Core, integrations and data synchronization. Poznań, Poland · hybrid, remote or office.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f5bd3'/%3E%3Ctext x='32' y='42' font-family='Segoe UI,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EVH%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --card: #ffffff;
+    --text: #14171c;
+    --muted: #5b6472;
+    --line: #e3e7ee;
+    --accent: #2f5bd3;
+    --accent-text: #ffffff;
+    --accent-soft: #edf1fd;
+    --ok: #1f9d55;
+    --shadow: 0 1px 2px rgba(20, 23, 28, .04), 0 12px 32px rgba(20, 23, 28, .07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1014;
+      --card: #161920;
+      --text: #e8eaee;
+      --muted: #9aa3b2;
+      --line: #262b35;
+      --accent: #8aa8ff;
+      --accent-text: #0e1014;
+      --accent-soft: #1b2232;
+      --ok: #4fd18b;
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1014;
+    --card: #161920;
+    --text: #e8eaee;
+    --muted: #9aa3b2;
+    --line: #262b35;
+    --accent: #8aa8ff;
+    --accent-text: #0e1014;
+    --accent-soft: #1b2232;
+    --ok: #4fd18b;
+    --shadow: none;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 32px 16px;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main {
+    width: 100%;
+    max-width: 620px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 40px;
+  }
+
+  header { display: flex; gap: 20px; align-items: center; }
+  .mono {
+    flex: none;
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    display: grid; place-items: center;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700; font-size: 24px; letter-spacing: .02em;
+  }
+  h1 { margin: 0; font-size: 30px; line-height: 1.15; letter-spacing: -.01em; }
+  .role { margin: 4px 0 0; color: var(--muted); font-size: 17px; }
+
+  .status {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin: 24px 0 0;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 14px;
+  }
+  .status::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ok);
+  }
+  .where { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+
+  .about { margin: 24px 0 0; }
+
+  .facts {
+    list-style: none; margin: 28px 0 0; padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+  .facts li {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .facts b { display: block; font-size: 24px; line-height: 1.2; color: var(--accent); }
+  .facts span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: var(--muted); }
+
+  .contact { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0 0; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600; font-size: 15px;
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  footer {
+    margin: 28px 0 0; padding: 20px 0 0;
+    border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 13px;
+  }
+  footer a { color: inherit; }
+
+  @media (max-width: 560px) {
+    main { padding: 24px; border-radius: 14px; }
+    header { gap: 14px; }
+    .mono { width: 52px; height: 52px; font-size: 20px; border-radius: 13px; }
+    h1 { font-size: 25px; }
+    .facts { grid-template-columns: 1fr; }
+    .facts li { display: flex; align-items: baseline; gap: 12px; }
+    .facts b { flex: none; min-width: 64px; font-size: 20px; }
+    .facts span { margin-top: 0; }
+    .btn { flex: 1 1 auto; justify-content: center; }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    main { border: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="mono" aria-hidden="true">VH</div>
+    <div>
+      <h1>Vasili Holub</h1>
+      <p class="role">Senior .NET Developer · C#, ASP.NET Core</p>
+    </div>
+  </header>
+
+  <p class="status">Open to Senior .NET roles</p>
+  <p class="where">Available now · Poznań, Poland · hybrid, remote or office</p>
+
+  <p class="about">.NET developer working on backend services, integrations and data synchronization.
+    On an internal employee portal for about 5,000 users I was the only .NET developer on a
+    15-person team. I redesigned its accounting-system integration so the portal no longer went
+    down during a sync.</p>
+
+  <ul class="facts">
+    <li><b>0 min</b><span>portal downtime per sync, down from 20–30</span></li>
+    <li><b>24</b><span>accounting syncs a day, up from 1 nightly</span></li>
+    <li><b>140+</b><span>endpoints moved from in-memory caches to database queries</span></li>
+  </ul>
+
+  <nav class="contact" aria-label="Contact">
+    <a class="btn primary" href="mailto:vasili.holub@poly-mind.net">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      vasili.holub@poly-mind.net
+    </a>
+    <a class="btn" href="https://www.linkedin.com/in/vasili-holub/" rel="me noopener" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.6-2.64-1.6 0-1.85 1.25-1.85 2.55v4.93h-4v-11Z"/></svg>
+      LinkedIn
+    </a>
+    <a class="btn" href="vasili-holub.vcf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+      Save contact
+    </a>
+  </nav>
+
+  <footer>English B2 · Polish B2 · CV and portfolio on request</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Case 3</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&amp;family=Onest:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#B4471F}a:hover{color:#8F3617}
+.meta{font:500 14px/1.4 Onest,sans-serif;color:#7A756C;letter-spacing:0.02em}
+.kick{font:600 13px/1.4 Onest,sans-serif;color:#B4471F;letter-spacing:0.14em;text-transform:uppercase}
+.lab{font:600 12px/1.4 Onest,sans-serif;color:#7A756C;letter-spacing:0.12em;text-transform:uppercase}
+.tag{display:inline-flex;align-items:center;font:500 13px/1 Onest,sans-serif;padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(30,28,25,0.12);color:#1E1C19}
+.body{font:400 15px/1.55 Onest,sans-serif;color:#57534C;margin:0}
+.res{display:flex;flex-direction:column;padding:12px 0;border-top:1px solid rgba(143,54,23,0.18)}
+.resv{font:700 26px/1.1 'Inter Tight',sans-serif;letter-spacing:-0.025em;color:#8F3617}
+.resl{font:400 14px/1.4 Onest,sans-serif;color:#57534C;margin-top:4px}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 52px 112px 44px; display: flex; flex-direction: column; background: #F5F1EA; color: #1E1C19; font-family: Onest, sans-serif">
+  <div class="meta" style="display: flex; justify-content: space-between; align-items: center">
+    <span style="color: #1E1C19; font-weight: 600">Vasili Holub</span>
+    <span>Portfolio · 06 / 09</span>
+  </div>
+  <div style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding-top: 36px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div class="kick">Case 03 · Fintech · 2026</div>
+      <h2 style="margin: 0; font: 700 40px/1.1 'Inter Tight', sans-serif; letter-spacing: -0.03em; max-width: 900px">Standard Grafana dashboards shipped with the services</h2>
+      <div style="display: flex; gap: 28px; font: 400 15px/1.4 Onest, sans-serif; color: #57534C"><span><span class="lab">Company</span>&nbsp;&nbsp;Fintech product company, under NDA</span><span><span class="lab">Role</span>&nbsp;&nbsp;Senior Developer, core services team of 5</span></div>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 400px; column-gap: 56px; flex: 1 1 auto">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font: 500 20px/1.45 Onest, sans-serif; color: #1E1C19">Built one standard set of Grafana dashboards for the team's core services, kept next to the service code and shipped through the services' Helm chart, the same in every environment.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px">
+          <div><div class="lab" style="margin-bottom: 8px">Challenge</div><p class="body">The team lead asked me to set up observability for the processes inside each of the team's core services, six deployable processes in total. The team had dashboards, but each part was configured and delivered its own way.</p></div>
+          <div><div class="lab" style="margin-bottom: 8px">Constraints</div><p class="body">There was no common standard to build on, so the approach itself had to be agreed first. Client installations differed too. Some ran on-premises, others in Azure, so one fixed set of dashboards did not fit all of them.</p></div>
+        </div>
+        <div>
+          <div class="lab" style="margin-bottom: 4px">Decisions</div>
+          <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; padding: 14px 0; border-top: 1px solid rgba(30,28,25,0.12)">
+            <div style="font: 700 14px/1.6 'Inter Tight', sans-serif; color: #B4471F">01</div>
+            <div><div style="font: 600 17px/1.35 'Inter Tight', sans-serif">Dashboards next to the code, shipped with the service's Helm chart</div><p class="body" style="margin-top: 4px">Instead of setting dashboards up by hand and keeping their definitions in separate configuration repositories, detached from the services and their releases.</p></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; padding: 14px 0; border-top: 1px solid rgba(30,28,25,0.12)">
+            <div style="font: 700 14px/1.6 'Inter Tight', sans-serif; color: #B4471F">02</div>
+            <div><div style="font: 600 17px/1.35 'Inter Tight', sans-serif">One template with values per environment</div><p class="body" style="margin-top: 4px">Instead of environment-specific values baked into each dashboard. Switching the datasource switches the environment without rewriting queries.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="background: #F6E2D6; border-radius: 20px; padding: 22px 26px 14px">
+          <div class="lab" style="color: #8F3617; margin-bottom: 8px">Results</div>
+          <div class="res" style="border-top: 0; padding-top: 4px"><div class="resv">7 dashboards in production</div><div class="resl">overview, process and runtime, logs, functional, cluster, Kafka, database, in one shared folder</div></div>
+          <div class="res"><div class="resv">About 2 months</div><div class="resl">from task to production, planned scope delivered</div></div>
+          <div class="res"><div class="resv">3 environments, one JSON</div><div class="resl">dev, test and prod run the same dashboard definitions</div></div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid rgba(30,28,25,0.1); border-radius: 20px; padding: 20px 26px">
+          <div class="lab" style="margin-bottom: 8px">Takeaway</div>
+          <p style="margin: 0; font: 500 16px/1.5 Onest, sans-serif">Show work early and ask for feedback sooner. Next time I would build the prototype faster and hand it over earlier.</p>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid rgba(30,28,25,0.12); padding-top: 18px">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag">5-person team</span><span class="tag">6 service processes</span><span class="tag">3 environments</span><span class="tag">Grafana</span><span class="tag">Prometheus</span><span class="tag">Loki</span><span class="tag">OpenTelemetry (.NET)</span><span class="tag">Helm</span><span class="tag">Kubernetes</span></div>
+      <a href="#story" style="display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; font: 600 15px/1 Onest, sans-serif; padding: 13px 20px; border-radius: 999px; background: #1E1C19; color: #FFFFFF; text-decoration: none">Full case story <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+    </div>
+  </div>
+  <div class="meta" style="display: flex; justify-content: space-between; align-items: center; padding-top: 18px">
+    <span>Vasili Holub · Case 3</span>
+    <span>06 / 09</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

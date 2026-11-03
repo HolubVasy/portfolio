@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Case 4</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&amp;family=Onest:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#B4471F}a:hover{color:#8F3617}
+.meta{font:500 14px/1.4 Onest,sans-serif;color:#7A756C;letter-spacing:0.02em}
+.kick{font:600 13px/1.4 Onest,sans-serif;color:#B4471F;letter-spacing:0.14em;text-transform:uppercase}
+.lab{font:600 12px/1.4 Onest,sans-serif;color:#7A756C;letter-spacing:0.12em;text-transform:uppercase}
+.tag{display:inline-flex;align-items:center;font:500 13px/1 Onest,sans-serif;padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(30,28,25,0.12);color:#1E1C19}
+.body{font:400 15px/1.55 Onest,sans-serif;color:#57534C;margin:0}
+.res{display:flex;flex-direction:column;padding:12px 0;border-top:1px solid rgba(143,54,23,0.18)}
+.resv{font:700 26px/1.1 'Inter Tight',sans-serif;letter-spacing:-0.025em;color:#8F3617}
+.resl{font:400 14px/1.4 Onest,sans-serif;color:#57534C;margin-top:4px}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 52px 112px 44px; display: flex; flex-direction: column; background: #F5F1EA; color: #1E1C19; font-family: Onest, sans-serif">
+  <div class="meta" style="display: flex; justify-content: space-between; align-items: center">
+    <span style="color: #1E1C19; font-weight: 600">Vasili Holub</span>
+    <span>Portfolio · 07 / 09</span>
+  </div>
+  <div style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding-top: 36px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div class="kick">Case 04 · Public sector, customs · first rollout 2018, medal 2019</div>
+      <h2 style="margin: 0; font: 700 40px/1.1 'Inter Tight', sans-serif; letter-spacing: -0.03em; max-width: 900px">Customs inspection paperwork, from my own idea to a state medal</h2>
+      <div style="display: flex; gap: 28px; font: 400 15px/1.4 Onest, sans-serif; color: #57534C"><span><span class="lab">Organization</span>&nbsp;&nbsp;National customs service</span><span><span class="lab">Role</span>&nbsp;&nbsp;initiator and developer of the system</span></div>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 400px; column-gap: 56px; flex: 1 1 auto">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font: 500 20px/1.45 Onest, sans-serif; color: #1E1C19">Proposed and built a web system for customs inspection paperwork. A document now takes 5 to 7 minutes instead of 10 to 30, data comes from central reference lists instead of being retyped, and the system earned a state medal.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px">
+          <div><div class="lab" style="margin-bottom: 8px">Challenge</div><p class="body">I filled in customs inspection documents myself and saw how much time they took and how often they contained errors. The same data had to be typed again for every document. The head of the customs office supported the idea of entering it once.</p></div>
+          <div><div class="lab" style="margin-bottom: 8px">Constraints</div><p class="body">The system had to pass state certification, including security certification. The customs service officially supported only Oracle, so the system moved from MySQL to Oracle, and I prepared 300 pages of certification documentation.</p></div>
+        </div>
+        <div>
+          <div class="lab" style="margin-bottom: 4px">Decisions</div>
+          <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; padding: 14px 0; border-top: 1px solid rgba(30,28,25,0.12)">
+            <div style="font: 700 14px/1.6 'Inter Tight', sans-serif; color: #B4471F">01</div>
+            <div><div style="font: 600 17px/1.35 'Inter Tight', sans-serif">A web system with a central database</div><p class="body" style="margin-top: 4px">Instead of extending the old local program, which had no central database, no shared reference lists and no control over who submits what.</p></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; padding: 14px 0; border-top: 1px solid rgba(30,28,25,0.12)">
+            <div style="font: 700 14px/1.6 'Inter Tight', sans-serif; color: #B4471F">02</div>
+            <div><div style="font: 600 17px/1.35 'Inter Tight', sans-serif">Present the system to top management as a security measure</div><p class="body" style="margin-top: 4px">Instead of presenting it as faster paperwork and lower inspection costs. All data in one database, and no submissions by people without the right to make them.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="background: #F6E2D6; border-radius: 20px; padding: 22px 26px 14px">
+          <div class="lab" style="color: #8F3617; margin-bottom: 8px">Results</div>
+          <div class="res" style="border-top: 0; padding-top: 4px"><div class="resv">From 10 to 30 min down to 5 to 7</div><div class="resl">time to prepare one inspection document, from the logs of the old and the new program</div></div>
+          <div class="res"><div class="resv">About 15 customs posts</div><div class="resl">using the system, rolled out with on-site training</div></div>
+          <div class="res"><div class="resv">State medal, 2019</div><div class="resl">for ensuring economic security, awarded for this system</div></div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid rgba(30,28,25,0.1); border-radius: 20px; padding: 20px 26px">
+          <div class="lab" style="margin-bottom: 8px">Takeaway</div>
+          <p style="margin: 0; font: 500 16px/1.5 Onest, sans-serif">Work with the manager who knows how to present an idea to the people who make the decision.</p>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid rgba(30,28,25,0.12); padding-top: 18px">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag">~15 customs posts</span><span class="tag">300 pages of certification documentation</span><span class="tag">led a UI developer, an intern and a DevOps engineer</span><span class="tag">C#</span><span class="tag">ASP.NET</span><span class="tag">MySQL</span><span class="tag">Oracle</span></div>
+      <a href="#story" style="display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; font: 600 15px/1 Onest, sans-serif; padding: 13px 20px; border-radius: 999px; background: #1E1C19; color: #FFFFFF; text-decoration: none">Full case story <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+    </div>
+  </div>
+  <div class="meta" style="display: flex; justify-content: space-between; align-items: center; padding-top: 18px">
+    <span>Vasili Holub · Case 4</span>
+    <span>07 / 09</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

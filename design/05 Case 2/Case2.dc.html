@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Case 2</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&amp;family=Onest:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#B4471F}a:hover{color:#8F3617}
+.meta{font:500 14px/1.4 Onest,sans-serif;color:#7A756C;letter-spacing:0.02em}
+.kick{font:600 13px/1.4 Onest,sans-serif;color:#B4471F;letter-spacing:0.14em;text-transform:uppercase}
+.lab{font:600 12px/1.4 Onest,sans-serif;color:#7A756C;letter-spacing:0.12em;text-transform:uppercase}
+.tag{display:inline-flex;align-items:center;font:500 13px/1 Onest,sans-serif;padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(30,28,25,0.12);color:#1E1C19}
+.body{font:400 15px/1.55 Onest,sans-serif;color:#57534C;margin:0}
+.res{display:flex;flex-direction:column;padding:12px 0;border-top:1px solid rgba(143,54,23,0.18)}
+.resv{font:700 26px/1.1 'Inter Tight',sans-serif;letter-spacing:-0.025em;color:#8F3617}
+.resl{font:400 14px/1.4 Onest,sans-serif;color:#57534C;margin-top:4px}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 52px 112px 44px; display: flex; flex-direction: column; background: #F5F1EA; color: #1E1C19; font-family: Onest, sans-serif">
+  <div class="meta" style="display: flex; justify-content: space-between; align-items: center">
+    <span style="color: #1E1C19; font-weight: 600">Vasili Holub</span>
+    <span>Portfolio · 05 / 09</span>
+  </div>
+  <div style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding-top: 36px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div class="kick">Case 02 · IT services, internal employee portal · 2025</div>
+      <h2 style="margin: 0; font: 700 40px/1.1 'Inter Tight', sans-serif; letter-spacing: -0.03em; max-width: 900px">140+ endpoints moved from in-memory caches to the database</h2>
+      <div style="display: flex; gap: 28px; font: 400 15px/1.4 Onest, sans-serif; color: #57534C"><span><span class="lab">Company</span>&nbsp;&nbsp;IT services company, under NDA</span><span><span class="lab">Role</span>&nbsp;&nbsp;.NET developer, de facto lead of the .NET part</span></div>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 400px; column-gap: 56px; flex: 1 1 auto">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font: 500 20px/1.45 Onest, sans-serif; color: #1E1C19">Moved 140+ portal endpoints from static in-memory caches to direct database queries. Every endpoint was checked against the old version, and all but 2 or 3 of them answer within 1 second.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px">
+          <div><div class="lab" style="margin-bottom: 8px">Challenge</div><p class="body">The portal kept almost everything it knew about employees in static in-memory caches. As the data grew wider (projects, roles, technologies), performance dropped and cached data could go missing. Two requirements came from the director. No endpoint may become slower, and none may take longer than 1 second.</p></div>
+          <div><div class="lab" style="margin-bottom: 8px">Constraints</div><p class="body">The change cut through the whole project while other features were being built in parallel. Resolving merge conflicts took 2 to 3 hours every day. There were no tests and no business description of a correct response, so the old endpoint became the specification.</p></div>
+        </div>
+        <div>
+          <div class="lab" style="margin-bottom: 4px">Decisions</div>
+          <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; padding: 14px 0; border-top: 1px solid rgba(30,28,25,0.12)">
+            <div style="font: 700 14px/1.6 'Inter Tight', sans-serif; color: #B4471F">01</div>
+            <div><div style="font: 600 17px/1.35 'Inter Tight', sans-serif">Remove the cache instead of keeping it</div><p class="body" style="margin-top: 4px">Instead of extending the cache, which did not fit the company's policy. Nobody could say how fresh the cached data was, and the cache was heavy to build and hold.</p></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; padding: 14px 0; border-top: 1px solid rgba(30,28,25,0.12)">
+            <div style="font: 700 14px/1.6 'Inter Tight', sans-serif; color: #B4471F">02</div>
+            <div><div style="font: 600 17px/1.35 'Inter Tight', sans-serif">Two environments, old and new, compared by script</div><p class="body" style="margin-top: 4px">The same request went to both, and Postman post-request scripts compared the responses over mock JSON data covering every entity.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="background: #F6E2D6; border-radius: 20px; padding: 22px 26px 14px">
+          <div class="lab" style="color: #8F3617; margin-bottom: 8px">Results</div>
+          <div class="res" style="border-top: 0; padding-top: 4px"><div class="resv">All but 2 or 3 endpoints</div><div class="resl">answer within the 1-second target, out of 140+</div></div>
+          <div class="res"><div class="resv">Fewer bugs</div><div class="resl">no more data disappearing from the cache, and fresher data in the portal</div></div>
+          <div class="res"><div class="resv">Prod-like environment</div><div class="resl">built from a sanitized copy of production after the first release was rolled back</div></div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid rgba(30,28,25,0.1); border-radius: 20px; padding: 20px 26px">
+          <div class="lab" style="margin-bottom: 8px">Takeaway</div>
+          <p style="margin: 0; font: 500 16px/1.5 Onest, sans-serif">A large cross-cutting change belongs in one branch and gets tested in an environment that looks like production. It only works if the rest of the team knows about it and works with you.</p>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid rgba(30,28,25,0.12); padding-top: 18px">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag">140+ endpoints</span><span class="tag">~30 tables with relations</span><span class="tag">~5,000 portal users</span><span class="tag">several months</span><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">SQL</span><span class="tag">Postman scripts</span><span class="tag">mock JSON test data</span></div>
+      <a href="#story" style="display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; font: 600 15px/1 Onest, sans-serif; padding: 13px 20px; border-radius: 999px; background: #1E1C19; color: #FFFFFF; text-decoration: none">Full case story <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+    </div>
+  </div>
+  <div class="meta" style="display: flex; justify-content: space-between; align-items: center; padding-top: 18px">
+    <span>Vasili Holub · Case 2</span>
+    <span>05 / 09</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

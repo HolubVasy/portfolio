@@ -46,22 +46,20 @@ a{color:var(--acc)}a:hover{color:var(--acc2)}
 #p8 [style*="padding-top: 86px"]{padding-top:74px!important}
 #p8 .rec{padding:10px 0;line-height:1.4}
 #p8 [style*="margin: 28px 0 10px"],#p8 [style*="margin: 24px 0 10px"]{margin:16px 0 6px!important}
-/* Кейсы: теги крупнее макета, поэтому ряд тегов переносится на две строки рядом с кнопкой «Full case story»
-   (как в макете, в одну строку с ней). Типографику макета не трогаем — ужимаются только отступы блоков,
-   иначе страница выходит за холст 900px */
-.pg[id^=case] [style*="justify-content: space-between; align-items: center; gap: 24px"]{padding-top:14px!important}
-.pg[id^=case] [style*="padding-top: 36px"]{padding-top:22px!important}
-.pg[id^=case] [style*="gap: 22px"]{gap:14px!important}
-.pg[id^=case] [style*="padding: 14px 0"]{padding:10px 0!important}
-.pg[id^=case] .res{padding:9px 0}
-.pg[id^=case] [style*="padding: 22px 26px"],.pg[id^=case] [style*="padding: 20px 26px"]{padding:18px 26px!important}
-.pg[id^=case] .body{line-height:1.48}
-/* Case 2 и Case 4 — самые длинные: им нужен ещё один шаг уплотнения, чтобы теги в две строки поместились */
-#case-2 h2,#case-4 h2{font-size:37px!important;line-height:1.08!important}
-#case-2 [style*="font: 500 20px/1.45"],#case-4 [style*="font: 500 20px/1.45"]{font-size:19px!important;line-height:1.4!important}
-#case-2 .body,#case-4 .body{font-size:14.5px;line-height:1.45}
-#case-2 .res,#case-4 .res{padding:7px 0}
-#case-2 [style*="padding: 22px 26px"],#case-4 [style*="padding: 22px 26px"],#case-2 [style*="padding: 20px 26px"],#case-4 [style*="padding: 20px 26px"]{padding:15px 24px!important}
+/* Кейсы: на экране 1440×900 текст макета (15px) читается мелко, поэтому основной текст, строка
+   company/role, подписи результатов и takeaway подняты. Заголовки и крупные цифры остаются как в макете,
+   место под более крупный текст берётся из отступов между блоками */
+.pg[id^=case] .body{font-size:16.5px!important;line-height:1.5!important}
+.pg[id^=case] [style*="gap: 28px"]{font-size:16px!important}
+.pg[id^=case] .resl{font-size:15px}
+.pg[id^=case] [style*="font: 500 16px/1.5"]{font-size:17px!important}
+.pg[id^=case] [style*="padding-top: 36px"]{padding-top:14px!important}
+.pg[id^=case] [style*="gap: 22px"]{gap:10px!important}
+.pg[id^=case] [style*="gap: 12px"]{gap:7px!important}
+.pg[id^=case] [style*="padding: 14px 0"]{padding:8px 0!important}
+.pg[id^=case] .res{padding:7px 0}
+.pg[id^=case] [style*="padding: 22px 26px"],.pg[id^=case] [style*="padding: 20px 26px"]{padding:16px 24px!important}
+.pg[id^=case] [style*="justify-content: space-between; align-items: center; gap: 24px"]{padding-top:10px!important}
 
 /* разворот: холст 1440×900, масштаб под окно; на узком экране — колонка с масштабом по ширине */
 .pg{position:relative;width:100%;height:calc(900px * var(--s));overflow:hidden;scroll-snap-align:start}
@@ -400,7 +398,7 @@ main{scroll-snap-type:y proximity}
       </div>
     </div>
     <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid rgba(30,28,25,0.12); padding-top: 18px">
-      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag n">140+ endpoints</span><span class="tag n">~30 tables with relations</span><span class="tag n">~5,000 portal users</span><span class="tag">several months</span><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">SQL</span><span class="tag">Postman scripts</span></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="tag n">140+ endpoints</span><span class="tag n">~30 tables with relations</span><span class="tag n">~5,000 portal users</span><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">SQL</span><span class="tag">Postman scripts</span></div>
       <a href="#story-2" style="display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; font: 600 15px/1 Onest, sans-serif; padding: 13px 20px; border-radius: 999px; background: #1E1C19; color: #FFFFFF; text-decoration: none">Full case story <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
     </div>
   </div>
